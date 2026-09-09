@@ -1,0 +1,1 @@
+import {db} from "./prisma"; export async function gradeFor(total:number){return db.gradingScale.findFirst({where:{minScore:{lte:total},maxScore:{gte:total}},orderBy:{minScore:"desc"}})}
